@@ -1,0 +1,12 @@
+*.xlsx
+*.xls
+*.csv
+
+outputs/*
+
+*.bak
+*.mdf
+*.ldf
+
+Thumbs.db
+Desktop.ini
