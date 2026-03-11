@@ -86,13 +86,16 @@ from stg_online_retail
 where UnitPrice < 0;
 
 
--- Controllo valori duplicati
+-- Controllo righe duplicate
 with cte as(
-	select InvoiceNo, StockCode, Quantity,
-		UnitPrice, CustomerID, count(*) as ConteggioDuplicati
+	select InvoiceNo, StockCode, Description, 
+		Quantity, InvoiceDate, UnitPrice,
+		CustomerID, Country,
+		count(*) as ConteggioDuplicati
 	from stg_online_retail
-	group by InvoiceNo, StockCode, Quantity,
-		UnitPrice, CustomerID
+	group by InvoiceNo, StockCode, Description, 
+		Quantity, InvoiceDate, UnitPrice,
+		CustomerID, Country
 	having count(*) > 1
 	)
 select sum(ConteggioDuplicati) - count(*) as RigheDuplicate
