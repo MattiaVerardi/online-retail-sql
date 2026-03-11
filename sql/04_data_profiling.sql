@@ -98,5 +98,5 @@ with cte as(
 		CustomerID, Country
 	having count(*) > 1
 	)
-select sum(ConteggioDuplicati) - count(*) as RigheDuplicate
+select count(*) as RigheDuplicate
 from cte;

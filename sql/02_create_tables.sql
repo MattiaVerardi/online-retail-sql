@@ -1,8 +1,7 @@
 /*
 Project: Online Retail SQL Analysis
 File: 02_create_tables.sql
-Description: Script per creare la tabella principale
-	del dataset
+Description: Script per creare la tabella di staging
 Author: Mattia Verardi
 Date: March 2026
 */
