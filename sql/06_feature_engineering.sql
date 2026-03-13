@@ -16,6 +16,7 @@ add TotalPrice decimal(18,2),
 	Month int,
 	Day int,
 	DayName varchar(10);
+go
 
 set language English;
 

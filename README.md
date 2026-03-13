@@ -1,19 +1,19 @@
 # Online Retail SQL Analysis
 
 
-### Obiettivi:
+## Obiettivi:
 
 
 
 
-### Dataset:
+## Dataset:
 
 Il dataset oggetto di analisi è Online Retail.csv.
 
 Durante il **data profiling**, è emerso che il dataset presenta le seguenti caratteristiche:
 
 * 541909 righe e 8 colonne
-* le colonne Description e CustomedID presentano dei valori null
+* le colonne Description e CustomerID presentano dei valori null
 * le colonne Quantity e UnitPrice presentano dei valori negativi
 * 4879 righe presentano valori duplicati
 
@@ -29,18 +29,18 @@ Successivamente, il **feature engineering** ha permesso la creazione delle segue
 * Year, Month, Day e DayName, estratte dalla colonna InvoiceDate
 
 
-### Risultati principali:
+## Risultati principali:
 
 
-### Approfondimenti chiave:
+## Approfondimenti chiave:
 
 
-### Tools:
+## Tools:
 
 * SQL Server
 
 
-### Struttura della repository:
+## Struttura della repository:
 
 online_retail-sql/
 
