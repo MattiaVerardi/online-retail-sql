@@ -167,33 +167,110 @@ go
 --=======================================
 
 -- Vendite per anno e mese
-select Year, Month, sum(TotalPrice) as TotalPrice
-from clean_online_retail
-group by Year, Month
-order by Year, Month;
+--select Year, Month, sum(TotalPrice) as Revenue
+--from clean_online_retail
+--group by Year, Month
+--order by Year, Month;
 
--- Vendite per giorno della settimana
-select DayName, sum(TotalPrice) as TotalPrice
-from clean_online_retail
-group by DayName
-order by case when DayName = 'Monday' then 1
-			  when DayName = 'Tuesday' then 2
-			  when DayName = 'Wednesday' then 3
-			  when DayName = 'Thursday' then 4
-			  when DayName = 'Friday' then 5
-			  when DayName = 'Saturday' then 6
-			  when DayName = 'Sunday' then 7
-			  end;
+---- Vendite per giorno della settimana
+--select DayName, sum(TotalPrice) as Revenue
+--from clean_online_retail
+--group by DayName
+--order by case when DayName = 'Monday' then 1
+--			  when DayName = 'Tuesday' then 2
+--			  when DayName = 'Wednesday' then 3
+--			  when DayName = 'Thursday' then 4
+--			  when DayName = 'Friday' then 5
+--			  when DayName = 'Saturday' then 6
+--			  when DayName = 'Sunday' then 7
+--			  end;
 
 --=======================================
---Geografic Analysis
+--Geographic Analysis
 --=======================================
+
+---- Fatturato per nazione
+--with CountryRevenue as(
+--		select Country,
+--			sum(TotalPrice) as Revenue
+--		from clean_online_retail
+--		group by Country
+--		)
+--select Country, 
+--	Revenue / sum(Revenue) over() as RevenueShare
+--from CountryRevenue
+--order by RevenueShare desc;
+
+---- Clienti per nazione
+--with CountryCustomers as(
+--		select Country,
+--			count(distinct CustomerID) as Customers
+--		from clean_online_retail
+--		group by Country
+--		),
+--	TotalCustomers as(
+--		select count(distinct CustomerID) as TotalCustomers
+--		from clean_online_retail
+--		)
+--select cc.Country,
+--	cc.Customers * 1.0 / tc.TotalCustomers as CustomersShare
+--from CountryCustomers as cc
+--cross join TotalCustomers as tc
+--order by CustomersShare desc;
+
+---- Fatturato medio per nazione
+--with CustomersRevenue as(
+--		select CustomerID, Country,
+--			sum(TotalPrice) as Revenue
+--		from clean_online_retail
+--		where CustomerID is not null
+--		group by CustomerID, Country
+--		)
+--select Country, avg(Revenue) as AverageRevenue
+--from CustomersRevenue
+--group by Country
+--order by AverageRevenue desc;
 
 --=======================================
 --Product Analysis
 --=======================================
 
+---- Top 10 prodotti più venduti per quantità
+--select top 10 StockCode, Description,
+--	sum(Quantity) as Quantity
+--from clean_online_retail
+--group by StockCode, Description
+--order by Quantity desc;
+
+---- Top 10 prodotti più venduti per fatturato
+--select top 10 StockCode, Description,
+--	sum(TotalPrice) as TotalPrice
+--from clean_online_retail
+--group by StockCode, Description
+--order by TotalPrice desc;
+
+---- Prodotti più venduti in assoluto
+--with Top10Quantity as(
+--			select top 10 StockCode, Description,
+--				sum(Quantity) as Quantity
+--			from clean_online_retail
+--			group by StockCode, Description
+--			order by Quantity desc
+--			),
+--		Top10Revenue as(
+--			select top 10 StockCode, Description,
+--				sum(TotalPrice) as TotalPrice
+--			from clean_online_retail
+--			group by StockCode, Description
+--			order by TotalPrice desc
+--			)
+--select q.StockCode, q.Description
+--from Top10Quantity as q
+--inner join Top10Revenue as r
+--	on q.StockCode = r.StockCode;
+
 --=======================================
 --Customer Analysis
 --=======================================
+
 
