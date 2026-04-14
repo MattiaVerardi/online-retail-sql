@@ -2,8 +2,8 @@
 *.xls
 *.csv
 
-!data/Online Retail.csv
-!data/RFM Customers Segmentation.csv
+!data/online_retail.csv
+!data/rfm_customers_segmentation.csv
 
 outputs/*
 

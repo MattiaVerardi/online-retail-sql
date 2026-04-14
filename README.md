@@ -21,10 +21,10 @@ Il dataset oggetto di analisi è Online Retail.csv.
 
 Durante il **data profiling**, è emerso che il dataset presenta le seguenti caratteristiche:
 
-* 541909 righe e 8 colonne
+* 541.909 righe e 8 colonne
 * le colonne *Description* e *CustomerID* presentano dei valori null
 * le colonne *Quantity* e *UnitPrice* presentano dei valori negativi
-* 4879 righe presentano valori duplicati
+* 4.879 righe presentano valori duplicati
 
 Con il **data cleaning** si è proceduto a:
 
@@ -67,7 +67,7 @@ L'analisi termina con la costruzione del modello RFM e la successiva segmentazio
 * *Monetary*, che rappresenta il fatturato generato
 
 Dalla combinazione dei punteggi di questi tre indicatori è stato calcolato il **RFM score**, necessario per procedere con la segmentazione della clientela in gruppi omogenei.
-Dall'analisi emerge che circa 1300 clienti rientrano dei segmenti *Lost* o *Hibernating*, ossia quei clienti che non acquistano da molto tempo, spendono poco ed effettuano pochi ordini. Al contrario, circa 550 clienti sono classificati come *Champion*, ovvero clienti ad altissimo valore per l'azienda in termini di frequenza, volumi e valore di acquisto. Particolarmente rilevanti sono quei 1600 clienti circa, appartenenti ai segmenti *Potential loyalist*, *Promising*, *New customer* e *Need attention*, sui quali l'azienda può lavorare per aumentare il valore nel tempo e favorirne la fidelizzazione.
+Dall'analisi emerge che circa 1.300 clienti rientrano dei segmenti *Lost* o *Hibernating*, ossia quei clienti che non acquistano da molto tempo, spendono poco ed effettuano pochi ordini. Al contrario, circa 550 clienti sono classificati come *Champion*, ovvero clienti ad altissimo valore per l'azienda in termini di frequenza, volumi e valore di acquisto. Particolarmente rilevanti sono quei 1.600 clienti circa, appartenenti ai segmenti *Potential loyalist*, *Promising*, *New customer* e *Need attention*, sui quali l'azienda può lavorare per aumentare il valore nel tempo e favorirne la fidelizzazione.
 
 
 
