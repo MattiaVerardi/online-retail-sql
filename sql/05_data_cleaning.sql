@@ -15,6 +15,7 @@ go
 
 if object_id('clean_online_retail', 'u') is not null
     drop table clean_online_retail;
+go
 
 with cte as(
 	select *, row_number() over(
@@ -22,16 +23,18 @@ with cte as(
 		StockCode collate SQL_Latin1_General_CP1_CS_AS,
 		Description, Quantity, InvoiceDate,
 		UnitPrice, CustomerID, Country
-		order by InvoiceNo) as rn
+		order by InvoiceNo) as RowNumber
 	from stg_online_retail
 	)
 select InvoiceNo,
 		StockCode collate SQL_Latin1_General_CP1_CS_AS as StockCode,
 		isnull(Description, 'MISSING') as Description,
 		Quantity, InvoiceDate,
-		UnitPrice, CustomerID, Country
+		UnitPrice, CustomerID,
+		replace(replace(replace(Country, char(13), ''),
+			char(10), ''), char(160), '') as Country
 into clean_online_retail
 from cte
-where rn = 1 
+where RowNumber = 1 
 	and Quantity >= 0
 	and UnitPrice >= 0;

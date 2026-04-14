@@ -2,6 +2,9 @@
 *.xls
 *.csv
 
+!data/Online Retail.csv
+!data/RFM Customers Segmentation.csv
+
 outputs/*
 
 *.bak

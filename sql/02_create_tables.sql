@@ -9,7 +9,7 @@ Date: March 2026
 use OnlineRetailDB;
 go
 
-CREATE TABLE stg_online_retail(
+create table stg_online_retail(
 	InvoiceNo varchar(20) not null,
 	StockCode varchar(20) not null,
 	Description varchar(500),

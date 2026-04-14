@@ -9,9 +9,9 @@ Date: March 2026
 use OnlineRetailDB;
 go
 
-
+-- NOTA: Aggiorna il path in base al tuo ambiente locale
 bulk insert stg_online_retail
-from 'C:\Users\User\Desktop\DATA ANALYST\PROGETTI\online-retail-sql\data\Online Retail.csv'
+from 'C:\Users\User\Desktop\DATA ANALYST\PROGETTI\online-retail-sql\data\online_retail.csv'
 with(
 	fieldterminator = ';',
 	rowterminator = '0x0a',
