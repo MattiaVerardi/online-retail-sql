@@ -42,7 +42,7 @@ Successivamente, il **feature engineering** ha permesso la creazione delle segue
 
 ## Risultati principali:
 
-Nella **business overview** è venuto fuori che, durante il periodo oggetto di analisi, l'azienda ha realizzato incassi per circa 11 milioni di sterline, con 4339 clienti, circa 21.000 fatture emesse e circa 3900 prodotti venduti.
+Nella **business overview** è venuto fuori che, durante il periodo oggetto di analisi, l'azienda ha realizzato incassi per circa 11 milioni di sterline, con 4.339 clienti, circa 21.000 fatture emesse e circa 3.900 prodotti venduti.
 
 La **transaction analysis** evidenza una forte asimmetria positiva della distribuzione. Infatti, la maggior parte delle transazioni si concentra su valori relativamente bassi, mentre una piccola percentuale di ordini di valore molto elevato genera una coda lunga nella distribuzione. In particolare, il valore mediano risulta significativamente inferiore rispetto alla media, indicando la presenza di outlier che influenza l'alto valore medio delle transazioni. Un comportamento simile si osserva anche nell'**average basket size**, dove la distribuzione mostra una forte variabilità: la maggior parte delle fatture contiene un numero contenuto di articoli, mentre pochi ordini includono quantità molto elevate, con valori massimi che arrivano fino alle 81.000 unità.
 
